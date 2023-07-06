@@ -29,7 +29,13 @@ export default function Home() {
 
   const [{ isOver }, drop] = useDrop(() => ({
     accept: ["checkbox", "text"],
-    drop: (el: Element) => addElement(el),
+    drop: (el: Element,monitor) => {
+      const didDrop = monitor.didDrop()
+      if (didDrop) {
+        return
+      }
+      addElement(el)
+    },
     collect: (monitor) => ({
       isOver: !!monitor.isOver(),
     }),
@@ -83,25 +89,30 @@ export default function Home() {
         </div>
 
         <div
-          className="   
+          className={`  
         flex
         justify-around
         items-stretch
+         
         flex-wrap  
         font-bold
         text-2xl  
         transition
         duration-300  
       dark:bg-[#2b2c3740] 
-      bg-[#E9EFFA] scrollbar-hide 
+      bg-[#E9EFFA]
+       scrollbar-hide 
         py-5
           min-w-[280px]
            w-full md:w-1/2 
           text-[#828FA3]  
           md:mt-[135px] 
-          rounded-lg "
+          rounded-lg
+          ${isOver?'bg-gray-800':''}
+          `}
           ref={drop}
         >
+        
           {drags.map((el, index) => (
             <Ele2 id={el.id} key={index} type={el.type} />
           ))}

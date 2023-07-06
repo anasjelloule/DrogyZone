@@ -12,7 +12,7 @@ function Header() {
         {/* Left Side  */}
         <div className=" flex items-center space-x-2  md:space-x-4">
           
-          <h3 className=" md:text-4xl  hidden md:inline-block font-bold  font-sans">
+          <h3 className=" md:text-4xl   md:inline-block font-bold  font-sans">
             Drogy Zone
           </h3>
           <div className=" flex items-center ">

@@ -6,7 +6,7 @@ import { Element } from "@/app/Types/Types";
 import { deleteEle ,changeTask,changeChecked} from "@/app/state/dragsSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { DragsState } from "../state/store";
-
+import Swal from 'sweetalert2'
 
 function Ele2({ id, type }: Element) {
     const dispatch = useDispatch()
@@ -20,6 +20,8 @@ function Ele2({ id, type }: Element) {
         }),
     }));
 
+ 
+
  const change_Task=(event:React.ChangeEvent<HTMLInputElement>)=>{
     if(type=="checkbox")
     dispatch(changeChecked(event.currentTarget.checked))
@@ -27,7 +29,9 @@ function Ele2({ id, type }: Element) {
     dispatch(changeTask(event.currentTarget.value))
  }
     const removeElement = () => {
-        dispatch(deleteEle(id))
+     
+        
+          dispatch(deleteEle(id))
     };
 
     return (

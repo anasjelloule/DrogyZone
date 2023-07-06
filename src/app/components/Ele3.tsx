@@ -6,6 +6,7 @@ import {  Task } from "@/app/Types/Types";
  
 import { useDispatch } from "react-redux";
 import { removeTask } from "@/app/state/dragsSlice";
+import Swal from "sweetalert2";
  interface Task2 extends Task{
      type:string
 }
@@ -14,7 +15,19 @@ function Ele2({ id, text,type }: Task2) {
     const dispatch = useDispatch()
  
     const removeElement = () => {
-        dispatch(removeTask(id))
+        Swal.fire({
+            title: 'Warnning!',
+            text: 'Do you want to continue',
+            icon: 'warning',
+            confirmButtonText: 'Yes',
+            showCancelButton: true,
+            cancelButtonText:"Cancel"
+            
+          }).then((result)=>{
+            if(result.isConfirmed)
+            dispatch(removeTask(id))
+          })
+        
     };
 
     return (

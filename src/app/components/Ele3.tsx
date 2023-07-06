@@ -75,7 +75,7 @@ function Ele2({ id, text, type }: Task2) {
             />
           )}
         </p>
-
+ 
         <span className="absolute top-2 right-2">
           <BsTrash
             size={18}

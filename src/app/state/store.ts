@@ -1,9 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit'
 import dragsSlice from '@/app/state/dragsSlice'
-
-
-
-
   const store = configureStore({
   reducer: {
     drags: dragsSlice.reducer,

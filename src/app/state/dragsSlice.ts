@@ -14,8 +14,8 @@ const initialState: initialStatetypes = {
     }
   ],
   drags: [],
-tasktitle:'',
-checked:false,
+  tasktitle: '',
+  checked: false,
   tasks: []
 }
 
@@ -23,22 +23,22 @@ const dragsSlice = createSlice({
   name: "drags",
   initialState,
   reducers: {
-    changeTask:(state, action: PayloadAction<string>) => {
-       
-      state.tasktitle=action.payload
+    changeTask: (state, action: PayloadAction<string>) => {
+
+      state.tasktitle = action.payload
     },
-    changeChecked:(state, action: PayloadAction<boolean>) => {
-       
-      state.checked=action.payload
+    changeChecked: (state, action: PayloadAction<boolean>) => {
+
+      state.checked = action.payload
     },
-    
+
     addTask: (state, action: PayloadAction<string>) => {
-      state.tasks.push({id:uuidv4(),text:action.payload});
-      state.tasktitle=''
-      state.checked=false
+      state.tasks.push({ id: uuidv4(), text: action.payload });
+      state.tasktitle = ''
+      state.checked = false
     },
     editTask: (state, action: PayloadAction<string>) => {
-      state.tasks.push({id:uuidv4(),text:action.payload});
+      state.tasks.push({ id: uuidv4(), text: action.payload });
     },
     removeTask: (state, action: PayloadAction<string>) => {
       state.tasks = state.tasks.filter(el => el.id != action.payload)
@@ -61,6 +61,6 @@ const dragsSlice = createSlice({
 });
 
 
-export const { dragEle, deleteEle,changeTask ,addTask,removeTask,changeChecked} = dragsSlice.actions;
+export const { dragEle, deleteEle, changeTask, addTask, removeTask, changeChecked } = dragsSlice.actions;
 
 export default dragsSlice;

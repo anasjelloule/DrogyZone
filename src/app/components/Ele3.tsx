@@ -17,7 +17,7 @@ function Ele2({ id, text, type }: Task2) {
   const removeElement = () => {
     Swal.fire({
       title: "Warnning!",
-      text: "Do you want to continue",
+      text: "Are u Sure ??!",
       icon: "warning",
       confirmButtonText: "Yes",
       showCancelButton: true,
@@ -31,19 +31,20 @@ function Ele2({ id, text, type }: Task2) {
     <>
       <div
         className=" w-[280px]
-                 my-5
-                  rounded-lg
-                    bg-white
-                      dark:bg-[#2b2c37]
-                       shadow-[#364e7e1a]
-                        py-6
-                         px-3
-                          shadow-lg 
-             dark:text-white
+                my-5
+                rounded-lg
+              bg-white
+                dark:bg-[#2b2c37]
+                
+                shadow-[#364e7e1a]
+                py-6
+                px-3
+                shadow-lg 
+              dark:text-white
               dark:hover:text-[#635fc7]
-               cursor-pointer 
-              flex
-              flex-col
+                cursor-pointer 
+                flex
+                 flex-col
               items-center
               justify-center
               relative
@@ -59,7 +60,7 @@ function Ele2({ id, text, type }: Task2) {
               type={type}
               value={text}
               disabled
-              className=" bg-transparent  px-4 py-2 outline-none focus:border-0 rounded-md text-sm  border-[0.5px] border-gray-600 focus:outline-[#635fc7] outline-1  ring-0  "
+              className="bg-transparent  px-4 py-2 outline-none focus:border-0 rounded-md text-sm  border-[0.5px] border-gray-600 focus:outline-[#635fc7] outline-1  ring-0  "
             />
           ) : (
             <input

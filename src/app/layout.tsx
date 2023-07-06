@@ -3,9 +3,8 @@ import Header from '@/app/components/Header'
 import './globals.css'
 
 import store from '@/app/state/store'
-import { Providers } from '@/app/state/provider'
-import { Dragndrop } from '@/app/components/Dragndrop'
-
+import { Providers } from '@/app/state/provider' 
+import dynamic from 'next/dynamic'
 
 
 
@@ -20,6 +19,10 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
 
+  const Dragndrop = dynamic(
+    () => import('@/app/components/Dragndrop'),
+    { ssr: false }
+  )
 
   return (
     <html lang="en"  >

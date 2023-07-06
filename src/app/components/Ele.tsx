@@ -25,7 +25,7 @@ function Ele({ id, type }: Element) {
         onDoubleClick={() => addElement()}
         className="
                 w-[280px]
-                first:my-5
+                my-5
                 rounded-lg
                 bg-white
                 dark:bg-[#2b2c37]

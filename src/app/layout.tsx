@@ -1,4 +1,4 @@
-'use client'
+
 import { Provider } from 'react-redux'
 import Header from '@/app/components/Header'
 import './globals.css'

@@ -1,11 +1,12 @@
 "use client";
-import React from "react";
+import React ,{ memo } from "react";
 import { useDrag } from "react-dnd";
 import { Element } from "@/app/Types/Types";
 import { dragEle } from "../state/dragsSlice";
 import { useDispatch } from "react-redux";
 
 function Ele({ id, type }: Element) {
+ 
   const dispatch = useDispatch();
   const [{ isDragging }, drag] = useDrag(() => ({
     type: type,
@@ -44,4 +45,4 @@ function Ele({ id, type }: Element) {
   );
 }
 
-export default Ele;
+export default memo(Ele);

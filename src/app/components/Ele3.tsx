@@ -1,4 +1,5 @@
 "use client";
+import { memo } from "react";
 import React, { useState } from "react";
 import { useDrag } from "react-dnd";
 import { BsTrash } from "react-icons/bs";
@@ -13,8 +14,10 @@ interface Task2 extends Task {
 
 function Ele2({ id, text, type }: Task2) {
   const dispatch = useDispatch();
+  const [disabled, setdisabled] = useState<boolean>(true);
 
   const removeElement = () => {
+    
     Swal.fire({
       title: "Warnning!",
       text: "Are u Sure ??!",
@@ -59,14 +62,14 @@ function Ele2({ id, text, type }: Task2) {
             <input
               type={type}
               value={text}
-              disabled
+              disabled={disabled}
+              onDoubleClick={()=>setdisabled(!disabled)}
               className="bg-transparent  px-4 py-2 outline-none focus:border-0 rounded-md text-sm  border-[0.5px] border-gray-600 focus:outline-[#635fc7] outline-1  ring-0  "
             />
           ) : (
             <input
               type={type}
-              disabled
-              checked={true}
+              disabled={disabled}
               className=" bg-transparent  px-4 py-2 outline-none focus:border-0 rounded-md text-sm  border-[0.5px] border-gray-600 focus:outline-[#635fc7] outline-1  ring-0  "
             />
           )}
@@ -84,4 +87,4 @@ function Ele2({ id, text, type }: Task2) {
   );
 }
 
-export default Ele2;
+export default memo(Ele2);

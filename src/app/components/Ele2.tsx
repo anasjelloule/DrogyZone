@@ -1,14 +1,16 @@
 "use client";
-import React, { useState } from "react";
+import { memo } from "react";
+import React from "react";
 import { useDrag } from "react-dnd";
 import { BsTrash } from "react-icons/bs";
 import { Element } from "@/app/Types/Types";
 import { deleteEle, changeTask, changeChecked } from "@/app/state/dragsSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { DragsState } from "../state/store";
-import Swal from "sweetalert2";
+ 
 
 function Ele2({ id, type }: Element) {
+     
   const dispatch = useDispatch();
   const tasktitle: string = useSelector(
     (state: DragsState) => state.drags.tasktitle
@@ -78,4 +80,4 @@ function Ele2({ id, type }: Element) {
   );
 }
 
-export default Ele2;
+export default memo(Ele2);

@@ -26,7 +26,7 @@ export default function RootLayout({
     <html lang="en"  >
       <body  className=" bg-[#f4f7fd] dark:bg-[#20212c]  ">
         <Provider store={store}>
-        <DndProvider backend={window.outerWidth>1024?HTML5Backend:TouchBackend}>
+        <DndProvider backend={HTML5Backend}>
            <div >
             <Header />
             {children}

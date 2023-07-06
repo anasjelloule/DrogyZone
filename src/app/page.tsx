@@ -92,8 +92,7 @@ export default function Home() {
           className={`  
         flex
         justify-around
-        items-stretch
-         
+        ${drags.length<1?' items-center':' items-stretch'}         
         flex-wrap  
         font-bold
         text-2xl  
@@ -107,12 +106,13 @@ export default function Home() {
            w-full md:w-1/2 
           text-[#828FA3]  
           md:mt-[135px] 
+          min-h-[120px]
           rounded-lg
           ${isOver?'bg-gray-800':''}
           `}
           ref={drop}
         >
-        
+       {drags.length<1?( <div className={`select-none ${isOver?'hidden':''} duration-300`}>Drop Here +</div>):''}
           {drags.map((el, index) => (
             <Ele2 id={el.id} key={index} type={el.type} />
           ))}

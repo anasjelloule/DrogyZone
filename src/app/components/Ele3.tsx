@@ -14,7 +14,7 @@ interface Task2 extends Task {
 
 function Ele2({ id, text, type }: Task2) {
   const dispatch = useDispatch();
-  const [disabled, setdisabled] = useState<boolean>(true);
+  
 
   const removeElement = () => {
     
@@ -62,14 +62,14 @@ function Ele2({ id, text, type }: Task2) {
             <input
               type={type}
               value={text}
-              disabled={disabled}
-              onDoubleClick={()=>setdisabled(!disabled)}
+              disabled 
+               
               className="bg-transparent  px-4 py-2 outline-none focus:border-0 rounded-md text-sm  border-[0.5px] border-gray-600 focus:outline-[#635fc7] outline-1  ring-0  "
             />
           ) : (
             <input
               type={type}
-              disabled={disabled}
+              disabled
               className=" bg-transparent  px-4 py-2 outline-none focus:border-0 rounded-md text-sm  border-[0.5px] border-gray-600 focus:outline-[#635fc7] outline-1  ring-0  "
             />
           )}
